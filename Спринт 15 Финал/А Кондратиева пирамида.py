@@ -32,8 +32,8 @@
 # kondratiy 1 9 5 0 -1
 # sam 1 9 5 0 1
 # anna 1 -4 5 0 1
-# номер посылки 33981171
-class input_data:
+# номер посылки 33998378
+class InputData:
     def __init__(self, data, pos):
         self.data = data
         data = data.split(' ')
@@ -93,12 +93,12 @@ def heapsort(nums, n):
         nums[i], nums[0] = nums[0], nums[i]
         heapify(nums, i, 0)
 
-
-heap = []
-with open('input.txt') as f:
-    n = int(f.readline())
-    for pos in range(n):
-        heap.append(input_data(f.readline().strip(), pos))
-heapsort(heap, n)
-for elem in heap:
-    print(elem)
+if __name__ == "__main__":
+    heap = []
+    with open('input.txt') as f:
+        n = int(f.readline())
+        for pos in range(n):
+            heap.append(InputData(f.readline().strip(), pos))
+    heapsort(heap, n)
+    for elem in heap:
+        print(elem)
